@@ -60,15 +60,15 @@
 						if ((setTime.getCurrentHour >= (setDataHelper.open.hour+1) && setTime.getCurrentHour <= (setDataHelper.close.hour-1)) ||
 							(setTime.getCurrentHour == setDataHelper.open.hour && setTime.getCurrentMinute >= setDataHelper.open.min) || 
 							(setTime.getCurrentHour == setDataHelper.close.hour && setTime.getCurrentMinute <= setDataHelper.close.min))  {
-								el.addClass('no-active')
+								el.removeClass().addClass('no-active')
 						}
 						if ((setTime.getCurrentHour > setDataHelper.close.hour || setTime.getCurrentHour <= (plugin.settings.timeNight-1)) || 
 							(setTime.getCurrentHour == setDataHelper.close.hour && setTime.getCurrentMinute >= setDataHelper.close.min))  {
-								el.addClass('active').html(plugin.settings.textAfter);
+								el.removeClass().addClass('active').html(plugin.settings.textAfter);
 							}
 						if ((plugin.settings.timeNight <= setTime.getCurrentHour && setTime.getCurrentHour < setDataHelper.open.hour) ||
 							(setTime.getCurrentHour == setDataHelper.open.hour && setTime.getCurrentMinute <= setDataHelper.open.min)) {
-								el.addClass('active').html(plugin.settings.textBefore);
+								el.removeClass().addClass('active').html(plugin.settings.textBefore);
 						} 
 					}
 		};
